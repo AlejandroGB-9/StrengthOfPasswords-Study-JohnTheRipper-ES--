@@ -12,6 +12,16 @@ Use the python script to generate the password datasets (hashed)
 
 ## 2. Rule sets for John the Ripper
 
+### 2.0 backup for john
+
+sudo cp /etc/john/john.conf /etc/john/john-local.conf
+
+access the john-local.conf file and add rules:
+
+sudo nano /etc/john/john-local.conf
+
+Add the following rules as they are shown
+
 ### 2.1. Rule 1
 
 
