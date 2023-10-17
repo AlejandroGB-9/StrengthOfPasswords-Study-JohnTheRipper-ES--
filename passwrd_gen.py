@@ -110,7 +110,7 @@ def generator_SHA512(fname, set, num):
     f = open("dataset" + str(set) + "_" + str(num) + "_SHA512" + ".txt", "a")
     for line in lines:
         line = line.strip()
-        line = hashlib.sha512(line.encode('UTF-8')).hexdigest()
+        line = hashlib.sha512(line.encode()).hexdigest()
         f.write(line + "\n")
     
     f.close()
@@ -121,7 +121,7 @@ def generator_MD5CRYPT(fname, set, num):
     f = open("dataset" + str(set) + "_" + str(num) + "_MD5CRYPT" + ".txt", "a")
     for line in lines:
         line = line.strip()
-        line = md5_crypt.hash(line)
+        line = hashlib.md5(line.encode()).hexdigest()
         f.write(line + "\n")
     
     f.close()
