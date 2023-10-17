@@ -67,7 +67,7 @@ def password_generator_alphanum(num):
     return
 
 def password_generator_wordlist(fname, num):
-    f = open("dataset4_" + str(num) + ".txt", "a")
+    f = open("dataset5_" + str(num) + ".txt", "a")
     lines = open(fname).read().splitlines()
     for i in range (0, 100):
         word = random.choice(lines)
@@ -85,13 +85,6 @@ def password_generator_wordlist(fname, num):
         
     f.close()
     return
-
-# def generate_wordlist(fname):
-#     random_list = []
-#     lines = open(fname).read().splitlines()
-#     for i in range(0, 100):
-#         random_list.append(random.choice(lines))
-#     return random_list
 
 def generate_wordlist(fname):
     cur_path = os.path. dirname(os.path.abspath(__file__))
@@ -112,62 +105,6 @@ def generate_wordlist(fname):
     f.close()
     return
 
-# def password_generator_sect1_2(fname, num):
-#     lines = open(fname).readlines()
-#     f = open("dataset1_2-" + str(num) + ".txt", "a")
-#     count = 0
-#     for line in lines:
-#         if len(line) <= 7 and len(line) >= 3 and count < 100:
-#             f.write(line.strip().lower() + "\n")
-#         count += 1;
-        
-#     f.close()
-#     return 
-    
-# def password_generator_sect2_2(fname, num):
-#     lines = open(fname).readlines()
-#     f = open("dataset2_2-" + str(num) + ".txt", "a")
-#     count = 0
-#     for line in lines:
-#         if len(line) <= 7 and len(line) >= 3 and count < 100:
-#             f.write(line.strip().upper() + "\n")
-#         count += 1; 
-    
-#     f.close()
-#     return 
-
-# def password_generator_sect3_2(num):
-#     f = open("dataset3_2-" + str(num) + ".txt", "a")
-#     for i in range(0, 100):
-#         f.write(str(random.randint(100, 9999999)) + "\n")
-#     f.close()
-#     return
-
-# def password_generator_sect4_2(fname, num):
-#     lines = open(fname).readlines()
-#     f = open("dataset4_2-" + str(num) + ".txt", "a")
-#     count = 0
-#     for line in lines:
-#         if len(line) <= 7 and len(line) >= 3 and count < 100:
-#             line = line.strip()
-#             line = modify_string(line)
-#             f.write(line + "\n")
-#         count += 1
-        
-#     f.close()
-#     return
-
-# def hash_passwords_1(fname, set, num):
-#     lines = open(fname).readlines()
-#     f = open("hash1_" + str(set) + "-" + str(num) + ".txt", "a")
-#     for line in lines:
-#         line = line.strip()
-#         line = hashlib.sha256(line.encode('UTF-8')).hexdigest()
-#         f.write(line + "\n")
-    
-#     f.close()
-#     return 
-
 def generator_SHA512(fname, set, num):
     lines = open(fname).readlines()
     f = open("dataset" + str(set) + "_" + str(num) + "_SHA512" + ".txt", "a")
@@ -181,7 +118,7 @@ def generator_SHA512(fname, set, num):
 
 def generator_MD5CRYPT(fname, set, num):
     lines = open(fname).readlines()
-    f = open("hash3_" + str(set) + "_" + str(num) + "_MD5CRYPT" + ".txt", "a")
+    f = open("dataset" + str(set) + "_" + str(num) + "_MD5CRYPT" + ".txt", "a")
     for line in lines:
         line = line.strip()
         line = md5_crypt.hash(line)
@@ -224,11 +161,13 @@ def main():
         generator_SHA512("dataset2_" + str(i) + ".txt", 2, i)
         generator_SHA512("dataset3_" + str(i) + ".txt", 3, i)
         generator_SHA512("dataset4_" + str(i) + ".txt", 4, i)
+        generator_SHA512("dataset5_" + str(i) + ".txt", 5, i)
         
         generator_MD5CRYPT("dataset1_" + str(i) + ".txt", 1, i)
         generator_MD5CRYPT("dataset2_" + str(i) + ".txt", 2, i)
         generator_MD5CRYPT("dataset3_" + str(i) + ".txt", 3, i)
         generator_MD5CRYPT("dataset4_" + str(i) + ".txt", 4, i)
+        generator_MD5CRYPT("dataset5_" + str(i) + ".txt", 5, i)
         
     print("##########################################")
     print("DATASETS HASHED")
