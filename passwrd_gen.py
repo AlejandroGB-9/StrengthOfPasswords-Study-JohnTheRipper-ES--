@@ -1,7 +1,6 @@
 import random
 import os
 import hashlib
-from passlib.hash import md5_crypt, sha256_crypt, sha512_crypt
 
 symbols = list("~!@#$%^&*()_+-=[]{;}'\"\":;,./<>?")
 
@@ -110,7 +109,7 @@ def generator_SHA512(fname, set, num):
     f = open("dataset" + str(set) + "_" + str(num) + "_SHA512" + ".txt", "a")
     for line in lines:
         line = line.strip()
-        line = hashlib.sha512(line.encode()).hexdigest()
+        line = hashlib.sha256(line.encode()).hexdigest()
         f.write(line + "\n")
     
     f.close()

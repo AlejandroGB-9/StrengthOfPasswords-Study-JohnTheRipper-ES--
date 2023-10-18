@@ -2,6 +2,7 @@
 
 ## Lab 1: Cybersecurity - John the Ripper
 
+john --format=Raw-MD5 --incremental=lower --min-length=3 --max-length=7 hashmd5.txt
 
 ## Run John the Ripper
 
