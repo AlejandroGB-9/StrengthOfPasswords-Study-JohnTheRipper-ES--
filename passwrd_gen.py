@@ -91,7 +91,7 @@ def generate_wordlist(fname):
         return
     with open(new_path, "r") as file:
         lines = file.read().splitlines()
-    f = open("gen_worldlist.txt", "a")
+    f = open("gen_wordlist.lst", "a")
     i = 0
     while i < 300:
         word = random.choice(lines)
@@ -149,7 +149,7 @@ def main():
         password_generator_upper(i, length+i)
         password_generator_numbers(i, length+i)
         password_generator_alphanum(i, length+i)
-        password_generator_wordlist("gen_worldlist.txt", i, length+i)
+        password_generator_wordlist("gen_wordlist.lst", i, length+i)
         
     print("##########################################")
     print("DATASETS GENERATED")
