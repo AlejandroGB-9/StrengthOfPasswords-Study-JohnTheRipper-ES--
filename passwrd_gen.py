@@ -53,11 +53,24 @@ def password_generator_numbers(num, length):
 
 def password_generator_alphanum(num, length):
     f = open("dataset4_" + str(num) + ".txt", "a")
-    for i in range (0, 100):
+    round = 0
+    count_symbs = 0
+    count_nums = 0
+    count_letters = 0
+    while round < 100:
         rand_lst = [random.randint(33, 126) for i in range(0,length)] #ASCII values for all symbols
-        rand_str_lst = list(map(chr, rand_lst))
-        rand_str = "".join(rand_str_lst)
-        f.write(rand_str + "\n")
+        for i in rand_lst:
+            if i in range(33,48) or i in range(58,65) or i in range(91,97) or i in range(123,127):
+                count_symbs += 1
+            elif i in range(48,58):
+                count_nums += 1
+            elif i in range(65,91) or i in range(97,123):
+                count_letters += 1
+        if count_symbs > 0 and count_nums > 0 and count_letters > 0:
+            rand_str_lst = list(map(chr, rand_lst))
+            rand_str = "".join(rand_str_lst)
+            f.write(rand_str + "\n")
+            round += 1
     f.close()
     return
 
@@ -131,14 +144,16 @@ def main():
     wlst_eng1 = "wordlists/WordList English Gutenberg.txt"
     wlst_eng2 = "wordlists/WordList English Unix.txt"
     wlst_eng3 = "wordlists/WordList_English rommmcek (4+ letter words only).txt"
-    wlst_esp1 = "wordlists/Wordlist Spanish.txt"
-    wlst_esp2 = "wordlists/WordList_SpanishAbc rommmcek.txt"
+    wlst_oth1 = "wordlists/Most-Popular-Letter-Passes.txt"
+    wlst_oth2 = "wordlists/probable-v2-top1575.txt"
+    wlst_oth3 = "wordlists/unkown-azul.txt"
     
     generate_wordlist(wlst_eng1) 
     generate_wordlist(wlst_eng2) 
     generate_wordlist(wlst_eng3) 
-    generate_wordlist(wlst_esp1) 
-    generate_wordlist(wlst_esp2)
+    generate_wordlist(wlst_oth1) 
+    generate_wordlist(wlst_oth2)
+    generate_wordlist(wlst_oth3)
     
     print("##########################################")
     print("WORDLIST GENERATED")
