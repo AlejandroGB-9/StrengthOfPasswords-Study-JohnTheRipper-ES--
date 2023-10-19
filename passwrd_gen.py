@@ -54,10 +54,10 @@ def password_generator_numbers(num, length):
 def password_generator_alphanum(num, length):
     f = open("dataset4_" + str(num) + ".txt", "a")
     round = 0
-    count_symbs = 0
-    count_nums = 0
-    count_letters = 0
     while round < 100:
+        count_symbs = 0
+        count_nums = 0
+        count_letters = 0
         rand_lst = [random.randint(33, 126) for i in range(0,length)] #ASCII values for all symbols
         for i in rand_lst:
             if i in range(33,48) or i in range(58,65) or i in range(91,97) or i in range(123,127):
@@ -160,9 +160,9 @@ def main():
     print("##########################################")  
     
     for i in range(1,6):
-        password_generator_lower(i, length+i)
-        password_generator_upper(i, length+i)
-        password_generator_numbers(i, length+i)
+        # password_generator_lower(i, length+i)
+        # password_generator_upper(i, length+i)
+        # password_generator_numbers(i, length+i)
         password_generator_alphanum(i, length+i)
         password_generator_wordlist("gen_wordlist.lst", i, length+i)
         
@@ -171,15 +171,15 @@ def main():
     print("##########################################")  
         
     for i in range(1,6):
-        generator_SHA256("dataset1_" + str(i) + ".txt", 1, i)
-        generator_SHA256("dataset2_" + str(i) + ".txt", 2, i)
-        generator_SHA256("dataset3_" + str(i) + ".txt", 3, i)
+        # generator_SHA256("dataset1_" + str(i) + ".txt", 1, i)
+        # generator_SHA256("dataset2_" + str(i) + ".txt", 2, i)
+        # generator_SHA256("dataset3_" + str(i) + ".txt", 3, i)
         generator_SHA256("dataset4_" + str(i) + ".txt", 4, i)
         generator_SHA256("dataset5_" + str(i) + ".txt", 5, i)
         
-        generator_MD5("dataset1_" + str(i) + ".txt", 1, i)
-        generator_MD5("dataset2_" + str(i) + ".txt", 2, i)
-        generator_MD5("dataset3_" + str(i) + ".txt", 3, i)
+        # generator_MD5("dataset1_" + str(i) + ".txt", 1, i)
+        # generator_MD5("dataset2_" + str(i) + ".txt", 2, i)
+        # generator_MD5("dataset3_" + str(i) + ".txt", 3, i)
         generator_MD5("dataset4_" + str(i) + ".txt", 4, i)
         generator_MD5("dataset5_" + str(i) + ".txt", 5, i)
         
