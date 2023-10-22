@@ -160,9 +160,9 @@ def main():
     print("##########################################")  
     
     for i in range(1,6):
-        # password_generator_lower(i, length+i)
-        # password_generator_upper(i, length+i)
-        # password_generator_numbers(i, length+i)
+        password_generator_lower(i, length+i)
+        password_generator_upper(i, length+i)
+        password_generator_numbers(i, length+i)
         password_generator_alphanum(i, length+i)
         password_generator_wordlist("gen_wordlist.lst", i, length+i)
         
@@ -171,15 +171,15 @@ def main():
     print("##########################################")  
         
     for i in range(1,6):
-        # generator_SHA256("dataset1_" + str(i) + ".txt", 1, i)
-        # generator_SHA256("dataset2_" + str(i) + ".txt", 2, i)
-        # generator_SHA256("dataset3_" + str(i) + ".txt", 3, i)
+        generator_SHA256("dataset1_" + str(i) + ".txt", 1, i)
+        generator_SHA256("dataset2_" + str(i) + ".txt", 2, i)
+        generator_SHA256("dataset3_" + str(i) + ".txt", 3, i)
         generator_SHA256("dataset4_" + str(i) + ".txt", 4, i)
         generator_SHA256("dataset5_" + str(i) + ".txt", 5, i)
         
-        # generator_MD5("dataset1_" + str(i) + ".txt", 1, i)
-        # generator_MD5("dataset2_" + str(i) + ".txt", 2, i)
-        # generator_MD5("dataset3_" + str(i) + ".txt", 3, i)
+        generator_MD5("dataset1_" + str(i) + ".txt", 1, i)
+        generator_MD5("dataset2_" + str(i) + ".txt", 2, i)
+        generator_MD5("dataset3_" + str(i) + ".txt", 3, i)
         generator_MD5("dataset4_" + str(i) + ".txt", 4, i)
         generator_MD5("dataset5_" + str(i) + ".txt", 5, i)
         
